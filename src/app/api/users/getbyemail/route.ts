@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
         await sendEmail({ email, emailType: "RESET", userId: user._id })
 
         const response = NextResponse.json({ message: "User found successfully", data: user }, { status: 200 })
-        response.cookies.set("token", token)
+        response.cookies.set("email", token)
 
         return response
     } catch (error: any) {

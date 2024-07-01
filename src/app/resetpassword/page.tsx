@@ -19,7 +19,6 @@ export default function ResetPassword() {
             setLoading(true)
             setButtonDisabled(true)
             const response = await axios.post('/api/users/resetpassword', user)
-            console.log("working...")
             console.log("forgot password Response: ", response.data)
             setLoading(false)
             toast.success("reset password Successfully ")

@@ -36,7 +36,7 @@ export default function verifyPassword() {
     }, [email]);
     return (
         <div className='flex flex-col items-center justify-center min-h-screen py-2'>
-            <h1>{loading ? "Processing..." : "Reset Password"}</h1>
+            <h1>{loading ? "Sending Email..." : "Reset Password"}</h1>
             <hr />
             <label htmlFor="email">Email</label>
             <input

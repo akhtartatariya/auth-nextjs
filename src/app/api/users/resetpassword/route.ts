@@ -2,14 +2,14 @@ import { connect } from "@/db/connect";
 import User from "@/models/user.model";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs"
-import { getDataFromToken } from "@/helper/getDataFromToken";
+import { getUserByEmailToken } from "@/helper/getUserByemailToken";
 connect()
 
 export async function POST(request: NextRequest) {
 
     try {
         const reqBody = await request.json()
-        const userId = await getDataFromToken(request)
+        const userId = await getUserByEmailToken(request)
         const { oldpassword, newpassword } = reqBody
 
         if (!oldpassword || !newpassword) {
